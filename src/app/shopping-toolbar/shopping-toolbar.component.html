@@ -1,0 +1,21 @@
+<div class="card" >
+  <div class="card-body">
+    <div class="row">
+      <div class="col-4">
+        <div class="form-group">
+          <label for="itemName">Name</label>
+          <input #nameInput type="text" class="form-control" id="itemName" placeholder="Enter name">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <label for="itemQte">Qte</label>
+          <input #qteInput type="number" class="form-control" id="itemQte" placeholder="Enter Qte" value="0">
+        </div>
+      </div>
+      <div class="col-4 text-right p-1">
+        <button (click)="addItem()" class="btn btn-primary">Add Item</button>
+      </div>
+    </div>
+  </div>
+</div>
