@@ -1,6 +1,6 @@
-<div class="container">
-  <app-shopping-toolbar (onShoppingItemAdded)="AddItem($event)"></app-shopping-toolbar>
-  <app-shopping-list>
-    <app-shopping-item (onRemove)="DeleteItem($event)" *ngFor="let item of shoppingItems" [itemValue]="item"></app-shopping-item>
-  </app-shopping-list>
-</div>
+
+<app-header></app-header>
+
+<div *ngFor="let id of items"><a [routerLink]="['details',id]" mat-raised-button color="primary">Item details {{id}}</a>
+
+<router-outlet></router-outlet>
