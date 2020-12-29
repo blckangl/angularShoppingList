@@ -1,5 +1,6 @@
 import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {ShoppingItem} from '../../Models/shopping-item.model';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-shopping-toolbar',
@@ -11,12 +12,18 @@ export class ShoppingToolbarComponent implements OnInit {
   @Output() onShoppingItemAdded: EventEmitter<ShoppingItem> = new EventEmitter<ShoppingItem>();
   @ViewChild('nameInput') nameInput: ElementRef;
   @ViewChild('qteInput') qteInput: ElementRef;
+  itemsForm: FormGroup;
 
   constructor() {
   }
 
   ngOnInit(): void {
+    this.itemsForm = new FormGroup({
+      name: new FormControl('', Validators.required),
+      qte: new FormControl(1, [Validators.required, Validators.min(1)])
+    });
   }
+
 
   addItem(): void {
     if (this.nameInput.nativeElement.value === '' || this.qteInput.nativeElement.value <= 0) {
@@ -30,4 +37,7 @@ export class ShoppingToolbarComponent implements OnInit {
   }
 
 
+  onItemAdded(): void {
+
+  }
 }

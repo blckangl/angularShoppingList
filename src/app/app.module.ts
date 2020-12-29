@@ -12,6 +12,12 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {HeaderComponent} from './header/header.component';
 import {RouterModule, Routes} from '@angular/router';
 import {ItemDetailsComponent} from './item-details/item-details.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -34,7 +40,13 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    RouterModule.forRoot(routes)
+    MatInputModule,
+    MatCardModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,13 @@
-<hr>
-<div class="row">
-  <div class="col-6">
-    <p>{{item.name}}</p>
-    <small>{{item.qte}}</small>
-  </div>
-  <div class="col-6 justify-content-center align-content-center text-right p-2">
-    <button class="btn btn-danger" (click)="removeItem()">Remove</button>
-  </div>
-</div>
-<hr>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{item.name}}</mat-card-title>
+    <mat-card-subtitle>{{item.qte}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-actions>
+    <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

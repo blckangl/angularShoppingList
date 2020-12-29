@@ -10,7 +10,9 @@ export class DashboardComponent implements OnInit {
   shoppingItems: ShoppingItem[] = [];
 
   constructor() {
-    this.shoppingItems.push(new ShoppingItem('nale', 50));
+    this.shoppingItems.push(new ShoppingItem('item1', 10));
+    this.shoppingItems.push(new ShoppingItem('item2', 50));
+    this.shoppingItems.push(new ShoppingItem('item3', 60));
   }
 
   AddItem($event: ShoppingItem): void {
