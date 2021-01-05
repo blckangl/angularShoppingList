@@ -16,8 +16,7 @@ export class ItemsDataService {
 
 
   getAllItems(): void {
-    // @ts-ignore
-    return this.http.get('https://localhost:44351/api/items').subscribe(data => {
+     this.http.get<ShoppingItem[]>('https://localhost:44351/api/items').subscribe(data => {
       this.shoppingItems = [...data];
       console.log(this.shoppingItems);
       this.itemsList.next(this.shoppingItems);
