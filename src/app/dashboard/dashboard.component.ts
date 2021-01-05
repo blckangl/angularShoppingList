@@ -22,8 +22,9 @@ export class DashboardComponent implements OnInit {
   }
 
   DeleteItem($event: ShoppingItem): void {
-    const index = this.shoppingItems.findIndex((x) => x.id === $event.id);
-    this.shoppingItems.splice(index, 1);
+
+    console.log($event.id);
+    this.itemsdata.deleteItem($event.id);
   }
 
   ngOnInit(): void {

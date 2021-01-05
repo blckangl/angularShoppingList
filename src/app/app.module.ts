@@ -19,10 +19,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {AuthGuardGuard} from './auth-guard.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'dashboard', component: DashboardComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuardGuard]},
   {path: 'details/:id', component: ItemDetailsComponent}
 ];
 
